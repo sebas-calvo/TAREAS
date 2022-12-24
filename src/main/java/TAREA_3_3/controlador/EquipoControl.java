@@ -31,15 +31,44 @@ public class EquipoControl {
         var month=Integer.valueOf(data[7]).intValue();
         var day=Integer.valueOf(data[8]).intValue();
         var fechaFundacion = LocalDate.of(year,month, day);
-        var poblacion=Boolean.valueOf(data[9]);
+        var poblacion=data[9];
        
         var equipo=new Equipo(codigo,nombre,pais,colorPrincipal,colorSecundario
                 ,partido,LocalDate.of(year, month, day),poblacion);
         this.EquipoServiceImpl.crear(equipo);
     }
+
+     public String modificar(String[] data) {
+        var retorno="No se puede modificar";
+        var codigo=Integer.valueOf(data[0]);
+        var nombre=data[1];
+        var pais=data[2];
+        var colorPrincipal=data[3];
+        var colorSecundario=data[4];
+        var partido=this.PartidoServiceImpl.buscarPorCodigo(Integer.valueOf(data[5]));
+        var year=Integer.valueOf(data[6]).intValue();
+        var month=Integer.valueOf(data[7]).intValue();
+        var day=Integer.valueOf(data[8]).intValue();
+        var fechaFundacion = LocalDate.of(year,month, day);
+        var poblacion=data[9];
+        var modificar = Integer.valueOf(data[10]).intValue();
+        
+        var equipo=new Equipo(codigo,nombre,pais,colorPrincipal,colorSecundario
+                ,partido,LocalDate.of(year, month, day),poblacion);
+        this.EquipoServiceImpl.modificar(equipo, modificar);
+        retorno="Modificado";
+        return retorno;
+     }
+    
     
     public List<Equipo> listar(){
         return this.EquipoServiceImpl.listar();
+    }
+    
+    public void eliminar(String codigos) {
+        var codigo = Integer.valueOf(codigos).intValue();
+        this.EquipoServiceImpl.eliminar(codigo);
+
     }
     
 }
