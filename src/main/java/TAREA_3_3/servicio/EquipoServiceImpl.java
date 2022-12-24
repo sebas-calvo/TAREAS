@@ -37,7 +37,33 @@ public class EquipoServiceImpl implements EquipoService{
         }
         return retorno;
     }
-    
+
+    @Override
+    public void modificar(Equipo equipo, int codigo) {
+        var indice = -1;
+        for (var equipos : this.equipoList) {
+            indice++;
+            if (codigo == equipo.getCodigo()) {
+                this.equipoList.set(indice, equipo);
+
+            }
+
+        }
+    }
+
+    @Override
+     public void eliminar(int codigo) {
+        var indice = -1;
+        for (var equipo : this.equipoList) {
+            indice++;
+            if (codigo == equipo.getCodigo() ) {
+                this.equipoList.remove(indice);
+
+            }
+
+        }
+    }
+
 }
     
 

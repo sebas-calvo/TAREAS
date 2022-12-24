@@ -37,5 +37,35 @@ public class JugadorServiceImpl implements JugadorService{
         }
         return retorno;
     }
-    
+
+     @Override
+    public void modificar(Jugador jugador, int codigo) {
+        var indice = -1;
+        for (var jugadores : this.jugadorList) {
+            indice++;
+            if (codigo == jugador.getCodigo()) {
+                this.jugadorList.set(indice, jugador);
+
+            }
+
+        }
+    }
+
+    @Override
+     public void eliminar(int codigo) {
+        var indice = -1;
+        for (var jugador : this.jugadorList) {
+            indice++;
+            if (codigo == jugador.getCodigo()) {
+                this.jugadorList.remove(indice);
+
+            }
+
+        }
+    }
+
 }
+    
+    
+    
+

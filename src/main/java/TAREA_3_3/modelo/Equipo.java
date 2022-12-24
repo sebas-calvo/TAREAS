@@ -19,10 +19,10 @@ public class Equipo {
     private String colorSecundario;
     private Partido partido;
     private LocalDate fechaFundacion;
-    private boolean local;
+    private String local;
 
     public Equipo(int codigo, String nombre, String pais, String colorPrincipal
-            , String colorSecundario, Partido partido, LocalDate fechaFundacion, boolean local) {
+            , String colorSecundario, Partido partido, LocalDate fechaFundacion, String local) {
         this.codigo = codigo;
         this.nombre = nombre;
         this.pais = pais;
@@ -30,7 +30,7 @@ public class Equipo {
         this.colorSecundario = colorSecundario;
         this.partido = partido;
         this.fechaFundacion = fechaFundacion;
-        this.local = local;
+        this.local=local;
     }
 
     public int getCodigo() {
@@ -89,11 +89,11 @@ public class Equipo {
         this.fechaFundacion = fechaFundacion;
     }
 
-    public boolean isLocal() {
+    public String getLocal() {
         return local;
     }
 
-    public void setLocal(boolean local) {
+    public void setLocal(String local) {
         this.local = local;
     }
 

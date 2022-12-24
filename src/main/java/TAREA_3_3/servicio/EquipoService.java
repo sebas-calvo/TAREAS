@@ -15,6 +15,10 @@ public interface EquipoService {
     
     public void crear(Equipo equipo);
     public List<Equipo> listar();
+    public void modificar(Equipo equipo, int codigo);
+    public void eliminar(int codigo);
+    
     public Equipo buscarPorCodigo(int codigo);
+
     
 }

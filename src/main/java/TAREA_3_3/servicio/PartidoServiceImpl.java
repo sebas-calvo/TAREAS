@@ -4,7 +4,6 @@
  */
 package TAREA_3_3.servicio;
 
-import TAREA_3_3.modelo.Jugador;
 import TAREA_3_3.modelo.Partido;
 import java.util.ArrayList;
 import java.util.List;
@@ -38,5 +37,31 @@ public class PartidoServiceImpl implements PartidoService{
         }
         return retorno;
     }
-    
+
+    @Override
+    public void modificar(Partido partido, int codigo) {
+        var indice = -1;
+        for (var partidos : this.partidoList) {
+            indice++;
+            if (codigo == partido.getCodigo()) {
+                this.partidoList.set(indice, partido);
+
+            }
+
+        }
+    }
+
+    @Override
+     public void eliminar(int codigo) {
+        var indice = -1;
+        for (var partido : this.partidoList) {
+            indice++;
+            if (codigo == partido.getCodigo()) {
+                this.partidoList.remove(indice);
+
+            }
+
+        }
+    }
+
 }

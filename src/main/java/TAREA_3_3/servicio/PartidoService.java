@@ -15,6 +15,9 @@ public interface PartidoService {
     
     public void crear(Partido partido);
     public List<Partido> listar();
+    public void modificar(Partido partido, int codigo);
+    public void eliminar(int codigo);
+    
     public Partido buscarPorCodigo(int codigo);
     
 }
