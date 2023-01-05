@@ -26,7 +26,7 @@ public class EquipoControl {
         var pais=data[2];
         var colorPrincipal=data[3];
         var colorSecundario=data[4];
-        var partido=this.PartidoServiceImpl.buscarPorCodigo(Integer.valueOf(data[5]));
+        var partido=data[5];
         var year=Integer.valueOf(data[6]).intValue();
         var month=Integer.valueOf(data[7]).intValue();
         var day=Integer.valueOf(data[8]).intValue();
@@ -45,7 +45,7 @@ public class EquipoControl {
         var pais=data[2];
         var colorPrincipal=data[3];
         var colorSecundario=data[4];
-        var partido=this.PartidoServiceImpl.buscarPorCodigo(Integer.valueOf(data[5]));
+        var partido=data[5];
         var year=Integer.valueOf(data[6]).intValue();
         var month=Integer.valueOf(data[7]).intValue();
         var day=Integer.valueOf(data[8]).intValue();
