@@ -15,10 +15,10 @@ public class Jugador {
     private int codigo;
     private String nombre;
     private String posicion;
-    private Equipo equipo;
+    private String equipo;
     private LocalDate fechaDebut;
 
-    public Jugador(int codigo, String nombre, String posicion, Equipo equipo, LocalDate fechaDebut) {
+    public Jugador(int codigo, String nombre, String posicion, String equipo, LocalDate fechaDebut) {
         this.codigo = codigo;
         this.nombre = nombre;
         this.posicion = posicion;
@@ -50,11 +50,11 @@ public class Jugador {
         this.posicion = posicion;
     }
 
-    public Equipo getEquipo() {
+    public String getEquipo() {
         return equipo;
     }
 
-    public void setEquipo(Equipo equipo) {
+    public void setEquipo(String equipo) {
         this.equipo = equipo;
     }
 
@@ -66,10 +66,12 @@ public class Jugador {
         this.fechaDebut = fechaDebut;
     }
 
+    
+
     @Override
     public String toString() {
         return "Jugador{" + "codigo=" + codigo + ", nombre=" + nombre 
-                + ", posicion=" + posicion + ", equipo=" + equipo.toString()
+                + ", posicion=" + posicion + ", equipo=" + equipo
                 + ", fechaDebut=" + fechaDebut.toString() + '}';
     }
     

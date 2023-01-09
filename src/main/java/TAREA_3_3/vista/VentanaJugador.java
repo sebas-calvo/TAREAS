@@ -5,12 +5,14 @@
 package TAREA_3_3.vista;
 
 import TAREA_3_3.controlador.JugadorControl;
+import javax.swing.JInternalFrame;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author sebas
  */
-public class VentanaJugador extends javax.swing.JFrame {
+public class VentanaJugador extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form VentanaJugador
@@ -18,6 +20,11 @@ public class VentanaJugador extends javax.swing.JFrame {
     private JugadorControl JugadorControl = new JugadorControl();
 
     public VentanaJugador() {
+        this.setClosable(true);
+        this.setIconifiable(true);
+        this.setResizable(true);
+        this.setDefaultCloseOperation(JInternalFrame.DISPOSE_ON_CLOSE);
+
         initComponents();
     }
 
@@ -51,15 +58,15 @@ public class VentanaJugador extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("codigo");
+        jLabel1.setText("Código");
 
-        jLabel2.setText("nombre");
+        jLabel2.setText("Nombre");
 
-        jLabel3.setText("posicion");
+        jLabel3.setText("Posición");
 
-        jLabel4.setText("equipo");
+        jLabel4.setText("Equipo");
 
-        jLabel5.setText("fecha Debut (año/mes/dia)");
+        jLabel5.setText("Fecha de Debut (año/mes/dia)");
 
         jTextField1.setColumns(5);
 
@@ -146,6 +153,7 @@ public class VentanaJugador extends javax.swing.JFrame {
                                     .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(layout.createSequentialGroup()
+                                .addGap(6, 6, 6)
                                 .addComponent(jLabel5)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -154,18 +162,19 @@ public class VentanaJugador extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(107, 107, 107)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 378, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(126, 126, 126)
-                        .addComponent(jButton1)
-                        .addGap(24, 24, 24)
-                        .addComponent(jButton2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton3)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton4)))
-                .addContainerGap(36, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 642, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(jButton1)
+                                .addGap(24, 24, 24)
+                                .addComponent(jButton2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jButton3)
+                                .addGap(18, 18, 18)
+                                .addComponent(jButton4)
+                                .addGap(164, 164, 164)))))
+                .addContainerGap(92, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -186,20 +195,21 @@ public class VentanaJugador extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(46, 46, 46)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel5))
+                .addGap(40, 40, 40)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
                     .addComponent(jButton2)
                     .addComponent(jButton3)
                     .addComponent(jButton4))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 294, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(24, Short.MAX_VALUE))
         );
 
@@ -207,20 +217,41 @@ public class VentanaJugador extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        var data = new String[7];
-        data[0] = this.jTextField1.getText();
-        data[1] = this.jTextField2.getText();
-        data[2] = this.jTextField3.getText();
-        data[3] = this.jTextField4.getText();
-        data[4] = this.jTextField5.getText();
-        data[5] = this.jTextField6.getText();
-        data[6] = this.jTextField7.getText();
+        if (JOptionPane.showConfirmDialog(this, "Seguro de guardar datos?",
+                 "Sistema de equipos", JOptionPane.ERROR_MESSAGE,
+                 JOptionPane.QUESTION_MESSAGE) == 0) {
+            var data = new String[7];
+            data[0] = this.jTextField1.getText();
+            data[1] = this.jTextField2.getText();
+            data[2] = this.jTextField3.getText();
+            data[3] = this.jTextField4.getText();
+            data[4] = this.jTextField5.getText();
+            data[5] = this.jTextField6.getText();
+            data[6] = this.jTextField7.getText();
 
-        this.JugadorControl.crear(data);
+            this.JugadorControl.crear(data);
+            JOptionPane.showMessageDialog(this, "Se guardaron los datos", "Aviso", JOptionPane.INFORMATION_MESSAGE);
+
+        } else {
+
+            JOptionPane.showMessageDialog(this, "No se guardaron los datos", "Aviso", JOptionPane.INFORMATION_MESSAGE);
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        this.actualizarTabla();
+        if (JOptionPane.showConfirmDialog(this, "Seguro de listar los datos?",
+                 "Sistema de equipos", JOptionPane.ERROR_MESSAGE,
+                 JOptionPane.QUESTION_MESSAGE) == 0) {
+
+            this.actualizarTabla();
+            JOptionPane.showMessageDialog(this, "Se listaron los datos",
+                     "Aviso", JOptionPane.INFORMATION_MESSAGE);
+
+        } else {
+
+            JOptionPane.showMessageDialog(this, "No se listar los datos",
+                     "Aviso", JOptionPane.INFORMATION_MESSAGE);
+        }
     }//GEN-LAST:event_jButton2ActionPerformed
     public void actualizarTabla() {
 
@@ -228,7 +259,7 @@ public class VentanaJugador extends javax.swing.JFrame {
         for (var i = 0; i < this.JugadorControl.listar().size(); i++) {
 
             data[i][0] = this.JugadorControl.listar().get(i).getCodigo();
-            data[i][1] = this.JugadorControl.listar().get(i).getEquipo().getNombre();
+            data[i][1] = this.JugadorControl.listar().get(i).getEquipo();
             data[i][2] = this.JugadorControl.listar().get(i).getFechaDebut().toString();
             data[i][3] = this.JugadorControl.listar().get(i).getNombre();
             data[i][4] = this.JugadorControl.listar().get(i).getPosicion();
@@ -246,57 +277,64 @@ public class VentanaJugador extends javax.swing.JFrame {
 
     }
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        var data = new String[7];
-        data[0] = this.jTextField1.getText();
-        data[1] = this.jTextField2.getText();
-        data[2] = this.jTextField3.getText();
-        data[3] = this.jTextField4.getText();
-        data[4] = this.jTextField5.getText();
-        data[5] = this.jTextField6.getText();
-        data[6] = this.jTextField7.getText();
+        if (JOptionPane.showConfirmDialog(this, "Seguro de modificar datos?",
+                 "Sistema de equipos", JOptionPane.ERROR_MESSAGE,
+                 JOptionPane.QUESTION_MESSAGE) == 0) {
 
-        this.JugadorControl.modificar(data);
+            var finaliza = false;
+            while (finaliza == false) {
+
+                try {
+                    String[] data = new String[8];
+                    data[0] = this.jTextField1.getText();
+                    data[1] = this.jTextField2.getText();
+                    data[2] = this.jTextField3.getText();
+                    data[3] = this.jTextField4.getText();
+                    data[4] = this.jTextField5.getText();
+                    data[5] = this.jTextField6.getText();
+                    data[6] = this.jTextField7.getText();
+                    data[7] = this.jTextField1.getText();
+
+                    this.JugadorControl.modificar(data);
+                    JOptionPane.showMessageDialog(this, "Datos modificados",
+                             "Aviso", JOptionPane.INFORMATION_MESSAGE);
+                    finaliza = true;
+                } catch (NumberFormatException el) {
+                    JOptionPane.showMessageDialog(this, "Debe ingresar un numero",
+                             "Aviso", JOptionPane.ERROR_MESSAGE);
+                }
+
+            }
+
+        } else {
+
+            JOptionPane.showMessageDialog(this, "No se modificaron los datos",
+                     "Aviso", JOptionPane.INFORMATION_MESSAGE);
+        }
+
+
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        if (JOptionPane.showConfirmDialog(this, "¿Seguro de eliminar los datos?"
+                ,"Sistema de equipos", JOptionPane.ERROR_MESSAGE
+                ,JOptionPane.QUESTION_MESSAGE)==0) {
         var codigo = this.jTextField1.getText();
         this.JugadorControl.eliminar(codigo);
+        this.actualizarTabla();
+        JOptionPane.showMessageDialog(this, "Se eliminaron los datos"
+                , "Aviso", JOptionPane.INFORMATION_MESSAGE);
+        }else{
+            
+            JOptionPane.showMessageDialog(this, "No se eliminaron los datos"
+                    , "Aviso", JOptionPane.INFORMATION_MESSAGE);
+        }
     }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(VentanaJugador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(VentanaJugador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(VentanaJugador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(VentanaJugador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new VentanaJugador().setVisible(true);
-            }
-        });
-    }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;

@@ -12,11 +12,11 @@ import java.time.LocalDate;
  */
 public class Partido {
     private int codigo;
-    private Equipo equipo1;
-    private Equipo equipo2;
+    private String equipo1;
+    private String equipo2;
     private LocalDate fechaPartido;
 
-    public Partido(int codigo, Equipo equipo1, Equipo equipo2, LocalDate fechaPartido) {
+    public Partido(int codigo, String equipo1, String equipo2, LocalDate fechaPartido) {
         this.codigo = codigo;
         this.equipo1 = equipo1;
         this.equipo2 = equipo2;
@@ -31,19 +31,19 @@ public class Partido {
         this.codigo = codigo;
     }
 
-    public Equipo getEquipo1() {
+    public String getEquipo1() {
         return equipo1;
     }
 
-    public void setEquipo1(Equipo equipo1) {
+    public void setEquipo1(String equipo1) {
         this.equipo1 = equipo1;
     }
 
-    public Equipo getEquipo2() {
+    public String getEquipo2() {
         return equipo2;
     }
 
-    public void setEquipo2(Equipo equipo2) {
+    public void setEquipo2(String equipo2) {
         this.equipo2 = equipo2;
     }
 
@@ -55,10 +55,12 @@ public class Partido {
         this.fechaPartido = fechaPartido;
     }
 
+    
+
     @Override
     public String toString() {
         return "Partido{" + "codigo=" + codigo + ", equipo1=" 
-                + equipo1.toString()+ ", equipo2=" + equipo2.toString() 
+                + equipo1+ ", equipo2=" + equipo2 
                 + ", fechaPartido=" + fechaPartido.toString() + '}';
     }
     

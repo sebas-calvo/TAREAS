@@ -42,11 +42,11 @@ public class PartidoControl {
         var codigo=Integer.valueOf(data[0]).intValue();
         var equipo1=data[1];
         var equipo2=data[2];
-        var year=Integer.valueOf(data[4]).intValue();
-        var month=Integer.valueOf(data[5]).intValue();
-        var day=Integer.valueOf(data[6]).intValue();
+        var year=Integer.valueOf(data[3]).intValue();
+        var month=Integer.valueOf(data[4]).intValue();
+        var day=Integer.valueOf(data[5]).intValue();
         var fechaPartido = LocalDate.of(year,month, day);
-        var modificar = Integer.valueOf(data[7]).intValue();
+        var modificar = Integer.valueOf(data[6]).intValue();
         
        var partido=new Partido(codigo,equipo1,equipo2,LocalDate.of(year, month, day));
         this.PartidoServiceImpl.modificar(partido, modificar);

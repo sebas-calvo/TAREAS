@@ -5,23 +5,29 @@
 package TAREA_3_3.vista;
 
 import TAREA_3_3.controlador.EquipoControl;
-import javax.swing.ButtonGroup;
+//import javax.swing.ButtonGroup;
+import javax.swing.JInternalFrame;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author sebas
  */
-public class VentanaEquipo extends javax.swing.JFrame {
+public class VentanaEquipo extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form VentanaEquipo
      */
-    
     private EquipoControl EquipoControl = new EquipoControl();
-    
+
     public VentanaEquipo() {
+        this.setClosable(true);
+        this.setIconifiable(true);
+        this.setResizable(true);
+        this.setDefaultCloseOperation(JInternalFrame.DISPOSE_ON_CLOSE);
+
         initComponents();
-        
+
     }
 
     /**
@@ -58,27 +64,27 @@ public class VentanaEquipo extends javax.swing.JFrame {
         jButton4 = new javax.swing.JButton();
         jRadioButton1 = new javax.swing.JRadioButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel1.setText("Codigo");
 
-        jLabel2.setText("nombre");
+        jLabel2.setText("Nombre");
 
-        jLabel3.setText("pais");
+        jLabel3.setText("País");
 
-        jLabel4.setText("colorPrincipal");
+        jLabel4.setText("Color Principal");
 
-        jLabel5.setText("colorSecundario");
+        jLabel5.setText("Color Secundario");
 
-        jLabel6.setText("codigo partido");
+        jLabel6.setText("Rival");
 
-        jLabel7.setText("fechaFundacion(año/mes/dia)");
+        jLabel7.setText("Fecha de Fundacion(año/mes/dia)");
 
-        jLabel8.setText("local");
+        jLabel8.setText("Local");
 
         jTextField1.setColumns(5);
 
-        jTextField2.setColumns(10);
+        jTextField2.setColumns(20);
 
         jTextField3.setColumns(5);
 
@@ -141,59 +147,60 @@ public class VentanaEquipo extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(23, 23, 23)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel7)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel7))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(19, 19, 19)
-                        .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(21, 21, 21)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 418, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addGap(31, 31, 31)
                                         .addComponent(jButton1)
                                         .addGap(18, 18, 18)
                                         .addComponent(jButton2)
                                         .addGap(18, 18, 18)
                                         .addComponent(jButton3)
                                         .addGap(18, 18, 18)
-                                        .addComponent(jButton4))))
-                            .addComponent(jRadioButton1))))
-                .addContainerGap(81, Short.MAX_VALUE))
+                                        .addComponent(jButton4))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(36, 36, 36)
+                                        .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(19, 19, 19)
+                                        .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 701, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel4)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jRadioButton1))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 96, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(635, 635, 635))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -222,60 +229,77 @@ public class VentanaEquipo extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
                     .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(21, 21, 21)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel7)
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel8)
-                            .addComponent(jRadioButton1)))
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel7))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel8)
+                    .addComponent(jRadioButton1))
+                .addGap(12, 12, 12)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
                     .addComponent(jButton2)
                     .addComponent(jButton3)
                     .addComponent(jButton4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(24, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(38, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        var data = new String [10];
-        data[0]=this.jTextField1.getText();
-        data[1]=this.jTextField2.getText();
-        data[2]=this.jTextField3.getText();
-        data[3]=this.jTextField4.getText();
-        data[4]=this.jTextField5.getText();
-        data[5]=this.jTextField6.getText();
-        data[6]=this.jTextField7.getText();
-        data[7]=this.jTextField8.getText();
-        data[8]=this.jTextField9.getText();
-        if (this.jRadioButton1.isSelected()) {
-            data[9]="Local";
-        }else{
-            data[9]="Visita";
+        if (JOptionPane.showConfirmDialog(this, "Seguro de guardar datos?",
+                 "Sistema de equipos", JOptionPane.ERROR_MESSAGE,
+                 JOptionPane.QUESTION_MESSAGE) == 0) {
+            String[] data = new String[10];
+            data[0] = this.jTextField1.getText();
+            data[1] = this.jTextField2.getText();
+            data[2] = this.jTextField3.getText();
+            data[3] = this.jTextField4.getText();
+            data[4] = this.jTextField5.getText();
+            data[5] = this.jTextField6.getText();
+            data[6] = this.jTextField7.getText();
+            data[7] = this.jTextField8.getText();
+            data[8] = this.jTextField9.getText();
+            if (this.jRadioButton1.isSelected()) {
+                data[9] = "Si";
+            } else {
+                data[9] = "No";
+            }
+
+            this.EquipoControl.crear(data);
+            JOptionPane.showMessageDialog(this, "Se guardaron los datos", "Aviso", JOptionPane.INFORMATION_MESSAGE);
+
+        } else {
+
+            JOptionPane.showMessageDialog(this, "No se guardaron los datos", "Aviso", JOptionPane.INFORMATION_MESSAGE);
         }
-                
-            
-       
-        
-        this.EquipoControl.crear(data);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        this.actualizarTabla();
+        if (JOptionPane.showConfirmDialog(this, "Seguro de listar los datos?",
+                 "Sistema de equipos", JOptionPane.ERROR_MESSAGE,
+                 JOptionPane.QUESTION_MESSAGE) == 0) {
+
+            this.actualizarTabla();
+            JOptionPane.showMessageDialog(this, "Se listaron los datos",
+                     "Aviso", JOptionPane.INFORMATION_MESSAGE);
+
+        } else {
+
+            JOptionPane.showMessageDialog(this, "No se listar los datos",
+                     "Aviso", JOptionPane.INFORMATION_MESSAGE);
+        }
     }//GEN-LAST:event_jButton2ActionPerformed
-public void actualizarTabla(){
-        
+    public void actualizarTabla() {
+
         var data = new Object[this.EquipoControl.listar().size()][8];
         for (var i = 0; i < this.EquipoControl.listar().size(); i++) {
 
@@ -285,7 +309,7 @@ public void actualizarTabla(){
             data[i][3] = this.EquipoControl.listar().get(i).getFechaFundacion().toString();
             data[i][4] = this.EquipoControl.listar().get(i).getNombre();
             data[i][5] = this.EquipoControl.listar().get(i).getPais();
-            data[i][6] = this.EquipoControl.listar().get(i).getPartido().toString();
+            data[i][6] = this.EquipoControl.listar().get(i).getPartido();
             data[i][7] = this.EquipoControl.listar().get(i).getLocal();
 
         }
@@ -304,67 +328,69 @@ public void actualizarTabla(){
 
     }
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        var data = new String [10];
-        data[0]=this.jTextField1.getText();
-        data[1]=this.jTextField2.getText();
-        data[2]=this.jTextField3.getText();
-        data[3]=this.jTextField4.getText();
-        data[4]=this.jTextField5.getText();
-        data[5]=this.jTextField6.getText();
-        data[6]=this.jTextField7.getText();
-        data[7]=this.jTextField8.getText();
-        data[8]=this.jTextField9.getText();
-        if (this.jRadioButton1.isSelected()) {
-            data[9]="Local";
-        }else{
-            data[9]="Visita";
+        if (JOptionPane.showConfirmDialog(this, "Seguro de modificar datos?",
+                 "Sistema de equipos", JOptionPane.ERROR_MESSAGE,
+                 JOptionPane.QUESTION_MESSAGE) == 0) {
+
+            var finaliza = false;
+            while (finaliza == false) {
+
+                try {
+                    String[] data = new String[11];
+                    data[0] = this.jTextField1.getText();
+                    data[1] = this.jTextField2.getText();
+                    data[2] = this.jTextField3.getText();
+                    data[3] = this.jTextField4.getText();
+                    data[4] = this.jTextField5.getText();
+                    data[5] = this.jTextField6.getText();
+                    data[6] = this.jTextField7.getText();
+                    data[7] = this.jTextField8.getText();
+                    data[8] = this.jTextField9.getText();
+                    if (this.jRadioButton1.isSelected()) {
+                        data[9] = "Local";
+                    } else {
+                        data[9] = "Visita";
+                    }
+                    data[10] = this.jTextField1.getText();
+
+                    this.EquipoControl.modificar(data);
+                    JOptionPane.showMessageDialog(this, "Datos modificados",
+                             "Aviso", JOptionPane.INFORMATION_MESSAGE);
+                    finaliza = true;
+                } catch (NumberFormatException el) {
+                    JOptionPane.showMessageDialog(this, "Debe ingresar un numero",
+                             "Aviso", JOptionPane.ERROR_MESSAGE);
+                }
+
+            }
+
+        } else {
+
+            JOptionPane.showMessageDialog(this, "No se modificaron los datos",
+                     "Aviso", JOptionPane.INFORMATION_MESSAGE);
         }
-                
-            
-       
-        
-        this.EquipoControl.modificar(data);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        var codigo = this.jTextField1.getText();
-        this.EquipoControl.eliminar(codigo);
+        if (JOptionPane.showConfirmDialog(this, "¿Seguro de eliminar los datos?",
+                 "Sistema de equipos", JOptionPane.ERROR_MESSAGE,
+                 JOptionPane.QUESTION_MESSAGE) == 0) {
+            var codigo = this.jTextField1.getText();
+            this.EquipoControl.eliminar(codigo);
+            this.actualizarTabla();
+
+            JOptionPane.showMessageDialog(this, "Se eliminaron los datos",
+                     "Aviso", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+
+            JOptionPane.showMessageDialog(this, "No se eliminaron los datos",
+                     "Aviso", JOptionPane.INFORMATION_MESSAGE);
+        }
     }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(VentanaEquipo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(VentanaEquipo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(VentanaEquipo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(VentanaEquipo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new VentanaEquipo().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
