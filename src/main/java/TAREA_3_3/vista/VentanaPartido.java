@@ -196,38 +196,52 @@ public class VentanaPartido extends javax.swing.JInternalFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         if (JOptionPane.showConfirmDialog(this, "Seguro de guardar datos?",
-                 "Sistema de equipos", JOptionPane.ERROR_MESSAGE,
-                 JOptionPane.QUESTION_MESSAGE) == 0) {
-            var data = new String[6];
-            data[0] = this.jTextField1.getText();
-            data[1] = this.jTextField2.getText();
-            data[2] = this.jTextField3.getText();
-            data[3] = this.jTextField4.getText();
-            data[4] = this.jTextField5.getText();
-            data[5] = this.jTextField6.getText();
+                "Sistema de equipos", JOptionPane.ERROR_MESSAGE,
+                JOptionPane.QUESTION_MESSAGE) == 0) {
+            var finaliza = false;
+            while (finaliza == false) {
 
-            this.PartidoControl.crear(data);
-            JOptionPane.showMessageDialog(this, "Se guardaron los datos", "Aviso", JOptionPane.INFORMATION_MESSAGE);
+                try {
+                    String[] data = new String[6];
+                    data[0] = this.jTextField1.getText();
+                    data[1] = this.jTextField2.getText();
+                    data[2] = this.jTextField3.getText();
+                    data[3] = this.jTextField4.getText();
+                    data[4] = this.jTextField5.getText();
+                    data[5] = this.jTextField6.getText();
+
+                    this.PartidoControl.crear(data);
+                    JOptionPane.showMessageDialog(this, "Se guardaron los datos",
+                            "Aviso", JOptionPane.INFORMATION_MESSAGE);
+                    finaliza = true;
+                } catch (NumberFormatException el) {
+                    JOptionPane.showMessageDialog(this, "Debe ingresar un numero en el codigo",
+                            "Aviso", JOptionPane.ERROR_MESSAGE);
+                }
+                break;
+
+            }
 
         } else {
 
-            JOptionPane.showMessageDialog(this, "No se guardaron los datos", "Aviso", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(this, "No se guardaron los datos",
+                    "Aviso", JOptionPane.INFORMATION_MESSAGE);
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         if (JOptionPane.showConfirmDialog(this, "Seguro de listar los datos?",
-                 "Sistema de equipos", JOptionPane.ERROR_MESSAGE,
-                 JOptionPane.QUESTION_MESSAGE) == 0) {
+                "Sistema de equipos", JOptionPane.ERROR_MESSAGE,
+                JOptionPane.QUESTION_MESSAGE) == 0) {
 
             this.actualizarTabla();
             JOptionPane.showMessageDialog(this, "Se listaron los datos",
-                     "Aviso", JOptionPane.INFORMATION_MESSAGE);
+                    "Aviso", JOptionPane.INFORMATION_MESSAGE);
 
         } else {
 
             JOptionPane.showMessageDialog(this, "No se listar los datos",
-                     "Aviso", JOptionPane.INFORMATION_MESSAGE);
+                    "Aviso", JOptionPane.INFORMATION_MESSAGE);
         }
     }//GEN-LAST:event_jButton2ActionPerformed
     public void actualizarTabla() {
@@ -252,8 +266,8 @@ public class VentanaPartido extends javax.swing.JInternalFrame {
     }
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         if (JOptionPane.showConfirmDialog(this, "Seguro de modificar datos?",
-                 "Sistema de equipos", JOptionPane.ERROR_MESSAGE,
-                 JOptionPane.QUESTION_MESSAGE) == 0) {
+                "Sistema de equipos", JOptionPane.ERROR_MESSAGE,
+                JOptionPane.QUESTION_MESSAGE) == 0) {
 
             var finaliza = false;
             while (finaliza == false) {
@@ -270,43 +284,43 @@ public class VentanaPartido extends javax.swing.JInternalFrame {
 
                     this.PartidoControl.modificar(data);
                     JOptionPane.showMessageDialog(this, "Datos modificados",
-                             "Aviso", JOptionPane.INFORMATION_MESSAGE);
+                            "Aviso", JOptionPane.INFORMATION_MESSAGE);
                     finaliza = true;
                 } catch (NumberFormatException el) {
-                    JOptionPane.showMessageDialog(this, "Debe ingresar un numero",
-                             "Aviso", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(this, "Debe ingresar un numero en el codigo",
+                            "Aviso", JOptionPane.ERROR_MESSAGE);
                 }
+                break;
 
             }
 
         } else {
 
             JOptionPane.showMessageDialog(this, "No se modificaron los datos",
-                     "Aviso", JOptionPane.INFORMATION_MESSAGE);
+                    "Aviso", JOptionPane.INFORMATION_MESSAGE);
         }
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         if (JOptionPane.showConfirmDialog(this, "¿Seguro de eliminar los datos?",
-                 "Sistema de equipos", JOptionPane.ERROR_MESSAGE,
-                 JOptionPane.QUESTION_MESSAGE) == 0) {
-        var codigo = this.jTextField1.getText();
-        this.PartidoControl.eliminar(codigo);
-        this.actualizarTabla();
+                "Sistema de equipos", JOptionPane.ERROR_MESSAGE,
+                JOptionPane.QUESTION_MESSAGE) == 0) {
+            var codigo = this.jTextField1.getText();
+            this.PartidoControl.eliminar(codigo);
+            this.actualizarTabla();
 
             JOptionPane.showMessageDialog(this, "Se eliminaron los datos",
-                     "Aviso", JOptionPane.INFORMATION_MESSAGE);
+                    "Aviso", JOptionPane.INFORMATION_MESSAGE);
         } else {
 
             JOptionPane.showMessageDialog(this, "No se eliminaron los datos",
-                     "Aviso", JOptionPane.INFORMATION_MESSAGE);
+                    "Aviso", JOptionPane.INFORMATION_MESSAGE);
         }
     }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
      * @param args the command line arguments
      */
-    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
