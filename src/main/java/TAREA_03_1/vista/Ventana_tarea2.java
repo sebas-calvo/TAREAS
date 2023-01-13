@@ -52,4 +52,4 @@ public class Ventana_tarea2 extends JFrame{
         this.jPanelList.get(5).setBackground(Color.lightGray);
         this.jPanelList.get(6).setBackground(Color.lightGray);
     
-}
+}}

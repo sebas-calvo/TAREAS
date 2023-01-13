@@ -30,7 +30,7 @@ public class Principal {
         
         var pedidoControl = new PedidoControl();
        var data= new String[5];
-       data[0]=10;                
+       data[0]="10";                
        data[1]="Iphone";   
        data[2]="";                 
        data[3]="";               

@@ -2,9 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
  */
-package TAREA_3_3.servicio;
+package TAREAS.servicio;
 
-import TAREA_3_3.modelo.Partido;
+import TAREAS.modelo.Partido;
 import java.util.List;
 
 /**

@@ -2,11 +2,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package TAREA_3_3.controlador;
+package TAREAS.controlador;
 
-import TAREA_3_3.modelo.Equipo;
-import TAREA_3_3.servicio.EquipoServiceImpl;
-import TAREA_3_3.servicio.PartidoServiceImpl;
+import TAREAS.modelo.Equipo;
+import TAREAS.servicio.EquipoServiceImpl;
+import TAREAS.servicio.PartidoServiceImpl;
 import java.time.LocalDate;
 import java.util.List;
 
