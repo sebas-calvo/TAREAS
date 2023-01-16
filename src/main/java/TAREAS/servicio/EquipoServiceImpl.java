@@ -14,7 +14,7 @@ import java.util.List;
  */
 public class EquipoServiceImpl implements EquipoService{
     
-    private List<Equipo> equipoList= new ArrayList<>();
+    private static List<Equipo> equipoList= new ArrayList<>();
     
     @Override
     public void crear(Equipo equipo) {

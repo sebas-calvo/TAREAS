@@ -14,7 +14,7 @@ import java.util.List;
  */
 public class PartidoServiceImpl implements PartidoService{
     
-    private List<Partido> partidoList= new ArrayList<>();
+    private static List<Partido> partidoList= new ArrayList<>();
     
     @Override
     public void crear(Partido partido) {

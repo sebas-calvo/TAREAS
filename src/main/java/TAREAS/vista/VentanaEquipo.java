@@ -5,6 +5,7 @@
 package TAREAS.vista;
 
 import TAREAS.controlador.EquipoControl;
+import java.time.DateTimeException;
 //import javax.swing.ButtonGroup;
 import javax.swing.JInternalFrame;
 import javax.swing.JOptionPane;
@@ -44,7 +45,6 @@ public class VentanaEquipo extends javax.swing.JInternalFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
@@ -52,7 +52,6 @@ public class VentanaEquipo extends javax.swing.JInternalFrame {
         jTextField3 = new javax.swing.JTextField();
         jTextField4 = new javax.swing.JTextField();
         jTextField5 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
         jTextField7 = new javax.swing.JTextField();
         jTextField8 = new javax.swing.JTextField();
         jTextField9 = new javax.swing.JTextField();
@@ -76,8 +75,6 @@ public class VentanaEquipo extends javax.swing.JInternalFrame {
 
         jLabel5.setText("Color Secundario");
 
-        jLabel6.setText("Rival");
-
         jLabel7.setText("Fecha de Fundacion(año/mes/dia)");
 
         jLabel8.setText("Local");
@@ -91,8 +88,6 @@ public class VentanaEquipo extends javax.swing.JInternalFrame {
         jTextField4.setColumns(10);
 
         jTextField5.setColumns(10);
-
-        jTextField6.setColumns(5);
 
         jTextField7.setColumns(3);
 
@@ -192,11 +187,6 @@ public class VentanaEquipo extends javax.swing.JInternalFrame {
                                 .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 96, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -226,10 +216,6 @@ public class VentanaEquipo extends javax.swing.JInternalFrame {
                     .addComponent(jLabel5)
                     .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -247,7 +233,7 @@ public class VentanaEquipo extends javax.swing.JInternalFrame {
                     .addComponent(jButton3)
                     .addComponent(jButton4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(38, Short.MAX_VALUE))
         );
 
@@ -262,38 +248,42 @@ public class VentanaEquipo extends javax.swing.JInternalFrame {
             while (finaliza == false) {
 
                 try {
-                    String[] data = new String[10];
+                    String[] data = new String[9];
                     data[0] = this.jTextField1.getText();
                     data[1] = this.jTextField2.getText();
                     data[2] = this.jTextField3.getText();
                     data[3] = this.jTextField4.getText();
                     data[4] = this.jTextField5.getText();
-                    data[5] = this.jTextField6.getText();
-                    data[6] = this.jTextField7.getText();
-                    data[7] = this.jTextField8.getText();
-                    data[8] = this.jTextField9.getText();
+
+                    data[5] = this.jTextField7.getText();
+                    data[6] = this.jTextField8.getText();
+                    data[7] = this.jTextField9.getText();
                     if (this.jRadioButton1.isSelected()) {
-                        data[9] = "Si";
+                        data[8] = "Si";
                     } else {
-                        data[9] = "No";
+                        data[8] = "No";
                     }
 
                     this.EquipoControl.crear(data);
                     JOptionPane.showMessageDialog(this, "Se guardaron los datos",
-                             "Aviso", JOptionPane.INFORMATION_MESSAGE);
+                            "Aviso", JOptionPane.INFORMATION_MESSAGE);
 
                     finaliza = true;
                 } catch (NumberFormatException el) {
-                    JOptionPane.showMessageDialog(this, "Debe ingresar un numero en el codigo",
-                            "Aviso", JOptionPane.ERROR_MESSAGE);
-                }break;
+                    JOptionPane.showMessageDialog(this, "Debe ingresar el formato requerido",
+                            "Error", JOptionPane.ERROR_MESSAGE);
+                } catch (DateTimeException el) {
+                
+                JOptionPane.showMessageDialog(this, "Debe ingresar una fecha valida",
+                        "Error", JOptionPane.ERROR_MESSAGE);
+            }break;
 
             }
 
         } else {
 
             JOptionPane.showMessageDialog(this, "No se guardaron los datos",
-                     "Aviso", JOptionPane.INFORMATION_MESSAGE);
+                    "Aviso", JOptionPane.INFORMATION_MESSAGE);
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -314,7 +304,7 @@ public class VentanaEquipo extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
     public void actualizarTabla() {
 
-        var data = new Object[this.EquipoControl.listar().size()][8];
+        var data = new Object[this.EquipoControl.listar().size()][7];
         for (var i = 0; i < this.EquipoControl.listar().size(); i++) {
 
             data[i][0] = this.EquipoControl.listar().get(i).getCodigo();
@@ -323,20 +313,18 @@ public class VentanaEquipo extends javax.swing.JInternalFrame {
             data[i][3] = this.EquipoControl.listar().get(i).getFechaFundacion().toString();
             data[i][4] = this.EquipoControl.listar().get(i).getNombre();
             data[i][5] = this.EquipoControl.listar().get(i).getPais();
-            data[i][6] = this.EquipoControl.listar().get(i).getPartido();
-            data[i][7] = this.EquipoControl.listar().get(i).getLocal();
+            data[i][6] = this.EquipoControl.listar().get(i).getLocal();
 
         }
 
-        var encabezado = new String[8];
+        var encabezado = new String[7];
         encabezado[0] = "Código";
         encabezado[1] = "Color Principal";
         encabezado[2] = "Color Secundario";
         encabezado[3] = "Fecha de Fundacion";
         encabezado[4] = "Nombre";
         encabezado[5] = "Pais";
-        encabezado[6] = "Partido";
-        encabezado[7] = "Local";
+        encabezado[6] = "Local";
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(data, encabezado));
 
@@ -350,31 +338,35 @@ public class VentanaEquipo extends javax.swing.JInternalFrame {
             while (finaliza == false) {
 
                 try {
-                    String[] data = new String[11];
+                    String[] data = new String[10];
                     data[0] = this.jTextField1.getText();
                     data[1] = this.jTextField2.getText();
                     data[2] = this.jTextField3.getText();
                     data[3] = this.jTextField4.getText();
                     data[4] = this.jTextField5.getText();
-                    data[5] = this.jTextField6.getText();
-                    data[6] = this.jTextField7.getText();
-                    data[7] = this.jTextField8.getText();
-                    data[8] = this.jTextField9.getText();
+
+                    data[5] = this.jTextField7.getText();
+                    data[6] = this.jTextField8.getText();
+                    data[7] = this.jTextField9.getText();
                     if (this.jRadioButton1.isSelected()) {
-                        data[9] = "Local";
+                        data[8] = "Local";
                     } else {
-                        data[9] = "Visita";
+                        data[8] = "Visita";
                     }
-                    data[10] = this.jTextField1.getText();
+                    data[9] = this.jTextField1.getText();
 
                     this.EquipoControl.modificar(data);
                     JOptionPane.showMessageDialog(this, "Datos modificados",
                             "Aviso", JOptionPane.INFORMATION_MESSAGE);
                     finaliza = true;
                 } catch (NumberFormatException el) {
-                    JOptionPane.showMessageDialog(this, "Debe ingresar un numero en el codigo",
-                            "Aviso", JOptionPane.ERROR_MESSAGE);
-                }break;
+                    JOptionPane.showMessageDialog(this, "Debe ingresar el formato requerido",
+                            "Error", JOptionPane.ERROR_MESSAGE);
+                } catch (DateTimeException el) {
+                
+                JOptionPane.showMessageDialog(this, "Debe ingresar una fecha valida",
+                        "Error", JOptionPane.ERROR_MESSAGE);
+            }break;
 
             }
 
@@ -389,12 +381,28 @@ public class VentanaEquipo extends javax.swing.JInternalFrame {
         if (JOptionPane.showConfirmDialog(this, "¿Seguro de eliminar los datos?",
                 "Sistema de equipos", JOptionPane.ERROR_MESSAGE,
                 JOptionPane.QUESTION_MESSAGE) == 0) {
-            var codigo = this.jTextField1.getText();
-            this.EquipoControl.eliminar(codigo);
-            this.actualizarTabla();
+            var finaliza = false;
+            while (finaliza == false) {
 
-            JOptionPane.showMessageDialog(this, "Se eliminaron los datos",
-                    "Aviso", JOptionPane.INFORMATION_MESSAGE);
+                try {
+                    var codigo = this.jTextField1.getText();
+                    this.EquipoControl.eliminar(codigo);
+                    this.actualizarTabla();
+
+                    JOptionPane.showMessageDialog(this, "Se eliminaron los datos",
+                            "Aviso", JOptionPane.INFORMATION_MESSAGE);
+                    finaliza = true;
+                } catch (NumberFormatException el) {
+                    JOptionPane.showMessageDialog(this, "Debe ingresar el formato requerido",
+                            "Error", JOptionPane.ERROR_MESSAGE);
+                } catch (DateTimeException el) {
+                
+                JOptionPane.showMessageDialog(this, "Debe ingresar una fecha valida",
+                        "Error", JOptionPane.ERROR_MESSAGE);
+            }break;
+
+            }
+
         } else {
 
             JOptionPane.showMessageDialog(this, "No se eliminaron los datos",
@@ -416,7 +424,6 @@ public class VentanaEquipo extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JRadioButton jRadioButton1;
@@ -427,7 +434,6 @@ public class VentanaEquipo extends javax.swing.JInternalFrame {
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField8;
     private javax.swing.JTextField jTextField9;

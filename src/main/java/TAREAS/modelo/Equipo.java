@@ -17,17 +17,15 @@ public class Equipo {
     private String pais;
     private String colorPrincipal;
     private String colorSecundario;
-    private String partido;
     private LocalDate fechaFundacion;
     private String local;
 
-    public Equipo(int codigo, String nombre, String pais, String colorPrincipal, String colorSecundario, String partido, LocalDate fechaFundacion, String local) {
+    public Equipo(int codigo, String nombre, String pais, String colorPrincipal, String colorSecundario, LocalDate fechaFundacion, String local) {
         this.codigo = codigo;
         this.nombre = nombre;
         this.pais = pais;
         this.colorPrincipal = colorPrincipal;
         this.colorSecundario = colorSecundario;
-        this.partido = partido;
         this.fechaFundacion = fechaFundacion;
         this.local = local;
     }
@@ -72,14 +70,6 @@ public class Equipo {
         this.colorSecundario = colorSecundario;
     }
 
-    public String getPartido() {
-        return partido;
-    }
-
-    public void setPartido(String partido) {
-        this.partido = partido;
-    }
-
     public LocalDate getFechaFundacion() {
         return fechaFundacion;
     }
@@ -100,9 +90,11 @@ public class Equipo {
     public String toString() {
         return "Equipo{" + "codigo=" + codigo + ", nombre=" + nombre + ", pais=" 
                 + pais + ", colorPrincipal=" + colorPrincipal + ", colorSecundario=" 
-                + colorSecundario + ", partido=" + partido + ", fechaFundacion=" 
-                + fechaFundacion.toString() + ", local=" + local + '}';
+                + colorSecundario + ", fechaFundacion=" + fechaFundacion.toString() + ", local=" 
+                + local + '}';
     }
+
+    
 
     
 

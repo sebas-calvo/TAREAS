@@ -22,8 +22,8 @@ public class PartidoControl {
     public void crear(String [] data){
         
         var codigo=Integer.valueOf(data[0]).intValue();
-        var equipo1=data[1];
-        var equipo2=data[2];
+        var equipo1=this.EquipoServiceImpl.buscarPorCodigo(Integer.valueOf(data[1]));
+        var equipo2=this.EquipoServiceImpl.buscarPorCodigo(Integer.valueOf(data[2]));
         var year=Integer.valueOf(data[3]).intValue();
         var month=Integer.valueOf(data[4]).intValue();
         var day=Integer.valueOf(data[5]).intValue();
@@ -40,8 +40,8 @@ public class PartidoControl {
     public String modificar(String[] data) {
         var retorno="No se puede modificar";
         var codigo=Integer.valueOf(data[0]).intValue();
-        var equipo1=data[1];
-        var equipo2=data[2];
+        var equipo1=this.EquipoServiceImpl.buscarPorCodigo(Integer.valueOf(data[1]));
+        var equipo2=this.EquipoServiceImpl.buscarPorCodigo(Integer.valueOf(data[2]));
         var year=Integer.valueOf(data[3]).intValue();
         var month=Integer.valueOf(data[4]).intValue();
         var day=Integer.valueOf(data[5]).intValue();

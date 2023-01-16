@@ -14,7 +14,7 @@ import java.util.List;
  */
 public class JugadorServiceImpl implements JugadorService{
     
-    private List<Jugador> jugadorList= new ArrayList<>();
+    private static List<Jugador> jugadorList= new ArrayList<>();
     
     @Override
     public void crear(Jugador jugador) {

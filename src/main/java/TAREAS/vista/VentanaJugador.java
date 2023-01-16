@@ -5,6 +5,7 @@
 package TAREAS.vista;
 
 import TAREAS.controlador.JugadorControl;
+import java.time.DateTimeException;
 import javax.swing.JInternalFrame;
 import javax.swing.JOptionPane;
 
@@ -238,10 +239,14 @@ public class VentanaJugador extends javax.swing.JInternalFrame {
                             "Aviso", JOptionPane.INFORMATION_MESSAGE);
                     finaliza = true;
                 } catch (NumberFormatException el) {
-                    JOptionPane.showMessageDialog(this, "Debe ingresar un numero en el codigo",
-                            "Aviso", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(this, "Debe ingresar el formato requerido",
+                            "Error", JOptionPane.ERROR_MESSAGE);
                 }
-                break;
+                catch (DateTimeException el) {
+                
+                JOptionPane.showMessageDialog(this, "Debe ingresar una fecha valida",
+                        "Error", JOptionPane.ERROR_MESSAGE);
+            }break;
 
             }
 
@@ -273,7 +278,7 @@ public class VentanaJugador extends javax.swing.JInternalFrame {
         for (var i = 0; i < this.JugadorControl.listar().size(); i++) {
 
             data[i][0] = this.JugadorControl.listar().get(i).getCodigo();
-            data[i][1] = this.JugadorControl.listar().get(i).getEquipo();
+            data[i][1] = this.JugadorControl.listar().get(i).getEquipo().getNombre();
             data[i][2] = this.JugadorControl.listar().get(i).getFechaDebut().toString();
             data[i][3] = this.JugadorControl.listar().get(i).getNombre();
             data[i][4] = this.JugadorControl.listar().get(i).getPosicion();
@@ -314,9 +319,14 @@ public class VentanaJugador extends javax.swing.JInternalFrame {
                             "Aviso", JOptionPane.INFORMATION_MESSAGE);
                     finaliza = true;
                 } catch (NumberFormatException el) {
-                    JOptionPane.showMessageDialog(this, "Debe ingresar un numero en el codigo",
-                            "Aviso", JOptionPane.ERROR_MESSAGE);
-                }break;
+                    JOptionPane.showMessageDialog(this, "Debe ingresar el formato requerido",
+                            "Error", JOptionPane.ERROR_MESSAGE);
+                }
+                catch (DateTimeException el) {
+                
+                JOptionPane.showMessageDialog(this, "Debe ingresar una fecha valida",
+                        "Error", JOptionPane.ERROR_MESSAGE);
+            }break;
 
             }
 
@@ -331,17 +341,34 @@ public class VentanaJugador extends javax.swing.JInternalFrame {
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         if (JOptionPane.showConfirmDialog(this, "¿Seguro de eliminar los datos?",
-                 "Sistema de equipos", JOptionPane.ERROR_MESSAGE,
-                 JOptionPane.QUESTION_MESSAGE) == 0) {
-            var codigo = this.jTextField1.getText();
-            this.JugadorControl.eliminar(codigo);
-            this.actualizarTabla();
-            JOptionPane.showMessageDialog(this, "Se eliminaron los datos",
-                     "Aviso", JOptionPane.INFORMATION_MESSAGE);
+                "Sistema de equipos", JOptionPane.ERROR_MESSAGE,
+                JOptionPane.QUESTION_MESSAGE) == 0) {
+            var finaliza = false;
+            while (finaliza == false) {
+
+                try {
+                    var codigo = this.jTextField1.getText();
+                    this.JugadorControl.eliminar(codigo);
+                    this.actualizarTabla();
+                    JOptionPane.showMessageDialog(this, "Se eliminaron los datos",
+                            "Aviso", JOptionPane.INFORMATION_MESSAGE);
+                    finaliza = true;
+                } catch (NumberFormatException el) {
+                    JOptionPane.showMessageDialog(this, "Debe ingresar el formato requerido",
+                            "Error", JOptionPane.ERROR_MESSAGE);
+                }
+                catch (DateTimeException el) {
+                
+                JOptionPane.showMessageDialog(this, "Debe ingresar una fecha valida",
+                        "Error", JOptionPane.ERROR_MESSAGE);
+            }break;
+
+            }
+
         } else {
 
             JOptionPane.showMessageDialog(this, "No se eliminaron los datos",
-                     "Aviso", JOptionPane.INFORMATION_MESSAGE);
+                    "Aviso", JOptionPane.INFORMATION_MESSAGE);
         }
     }//GEN-LAST:event_jButton4ActionPerformed
 

@@ -24,7 +24,7 @@ public class JugadorControl {
         var codigo=Integer.valueOf(data[0]);
         var nombre=data[1];
         var posicion=data[2];
-        var equipo=data[3];;
+        var equipo=this.EquipoServiceImpl.buscarPorCodigo(Integer.valueOf(data[3]));
         var year=Integer.valueOf(data[4]).intValue();
         var month=Integer.valueOf(data[5]).intValue();
         var day=Integer.valueOf(data[6]).intValue();
@@ -44,7 +44,7 @@ public class JugadorControl {
         var codigo=Integer.valueOf(data[0]);
         var nombre=data[1];
         var posicion=data[2];
-        var equipo=data[3];;
+        var equipo=this.EquipoServiceImpl.buscarPorCodigo(Integer.valueOf(data[3]));
         var year=Integer.valueOf(data[4]).intValue();
         var month=Integer.valueOf(data[5]).intValue();
         var day=Integer.valueOf(data[6]).intValue();
