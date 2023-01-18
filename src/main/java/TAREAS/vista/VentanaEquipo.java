@@ -6,7 +6,7 @@ package TAREAS.vista;
 
 import TAREAS.controlador.EquipoControl;
 import java.time.DateTimeException;
-//import javax.swing.ButtonGroup;
+
 import javax.swing.JInternalFrame;
 import javax.swing.JOptionPane;
 

@@ -33,7 +33,7 @@ public class EquipoControl {
         var local = data[8];
 
         var equipo = new Equipo(codigo, nombre, pais, colorPrincipal, colorSecundario,
-             LocalDate.of(year, month, day), local);
+                LocalDate.of(year, month, day), local);
         this.EquipoServiceImpl.crear(equipo);
     }
 
@@ -44,7 +44,7 @@ public class EquipoControl {
         var pais = data[2];
         var colorPrincipal = data[3];
         var colorSecundario = data[4];
-        
+
         var year = Integer.valueOf(data[5]).intValue();
         var month = Integer.valueOf(data[6]).intValue();
         var day = Integer.valueOf(data[7]).intValue();
@@ -53,7 +53,7 @@ public class EquipoControl {
         var modificar = Integer.valueOf(data[9]).intValue();
 
         var equipo = new Equipo(codigo, nombre, pais, colorPrincipal, colorSecundario,
-                  LocalDate.of(year, month, day), local);
+                LocalDate.of(year, month, day), local);
         this.EquipoServiceImpl.modificar(equipo, modificar);
         retorno = "Modificado";
         return retorno;
@@ -69,4 +69,19 @@ public class EquipoControl {
         return this.EquipoServiceImpl.listar();
     }
 
+    private boolean existeCodigo(int codigo) 
+    {
+        var retorno = false;
+        for (var equipo : this.EquipoServiceImpl.listar()) {
+            if (equipo.getCodigo() == codigo) {
+                retorno = true;
+                break;
+            }
+            
+        }
+        return retorno;
+    }
+
+    
+    
 }
