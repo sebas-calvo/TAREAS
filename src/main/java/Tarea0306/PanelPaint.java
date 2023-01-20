@@ -3,111 +3,115 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
 package Tarea0306;
+
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+
 /**
  *
  * @author sebasc
  */
-public class PanelPaint extends JPanel implements MouseListener{
+public class PanelPaint extends JPanel implements MouseListener {
 
     private int x1 = 0;
     private int y1 = 0;
     private int x2 = 0;
     private int y2 = 0;
-    private int numFigura=0;
-   
-    private int dimx=0;
-    private int dimy=0;
+    private int numFigura = 0;
+
+    private int dimx = 0;
+    private int dimy = 0;
     private Color colorLinea = Color.BLACK;
 
     public PanelPaint() {
         this.addMouseListener(this);
     }
-    public void figura(String e){
-        
-        if(e.equalsIgnoreCase("Estrella")){
-        this.numFigura=0;
+
+    public void figura(String e) {
+
+        if (e.equalsIgnoreCase("Estrella")) {
+            this.numFigura = 0;
         }
-        if(e.equalsIgnoreCase("Circulo")){
-        this.numFigura=1;
+        if (e.equalsIgnoreCase("Circulo")) {
+            this.numFigura = 1;
         }
-        if(e.equalsIgnoreCase("Cuadrado")){
-        this.numFigura=2;
+        if (e.equalsIgnoreCase("Cuadrado")) {
+            this.numFigura = 2;
         }
-        if(e.equalsIgnoreCase("Rectangulo")){
-        this.numFigura=3;
+        if (e.equalsIgnoreCase("Rectangulo")) {
+            this.numFigura = 3;
         }
-        if(e.equalsIgnoreCase("Triangulo")){
-        this.numFigura=4;
+        if (e.equalsIgnoreCase("Triangulo")) {
+            this.numFigura = 4;
         }
-   
-        
+
     }
- public void dimenciones(String e1, String e2){
-     this.dimx=Integer.valueOf(e1).intValue();
-     this.dimy=Integer.valueOf(e2).intValue();
- 
- 
- }
+
+    public void dimenciones(String e1, String e2) {
+        this.dimx = Integer.valueOf(e1).intValue();
+        this.dimy = Integer.valueOf(e2).intValue();
+
+    }
+
     @Override
     public void paint(Graphics g) {
         super.paint(g);
-        if(this.numFigura==0){
+        if (this.numFigura == 0) {
             g.setColor(this.colorLinea);
-            g.drawLine(this.x1,y1-dimy/2 ,this.x1-dimx/6 ,y1-dimy/6 );
-            g.drawLine(this.x1,y1-dimy/2, this.x1+dimx/6 ,y1-dimy/6 );
-            g.drawLine(this.x1,y1+dimy/2 ,this.x1-dimx/6 ,y1+dimy/6 );
-            g.drawLine(this.x1,y1+dimy/2 ,this.x1+dimx/6 ,y1+dimy/6 );
-            g.drawLine(this.x1-dimx/2,y1,this.x1-dimx/6 ,y1-dimy/6 );
-            g.drawLine(this.x1-dimx/2,y1,this.x1-dimx/6 ,y1+dimy/6 );
-            g.drawLine(this.x1+dimx/2,y1,this.x1+dimx/6 ,y1-dimy/6 );
-            g.drawLine(this.x1+dimx/2,y1,this.x1+dimx/6 ,y1+dimy/6 );
+            g.drawLine(this.x1, y1 - dimy / 2, this.x1 - dimx / 6, y1 - dimy / 6);
+            g.drawLine(this.x1, y1 - dimy / 2, this.x1 + dimx / 6, y1 - dimy / 6);
+            g.drawLine(this.x1, y1 + dimy / 2, this.x1 - dimx / 6, y1 + dimy / 6);
+            g.drawLine(this.x1, y1 + dimy / 2, this.x1 + dimx / 6, y1 + dimy / 6);
+            g.drawLine(this.x1 - dimx / 2, y1, this.x1 - dimx / 6, y1 - dimy / 6);
+            g.drawLine(this.x1 - dimx / 2, y1, this.x1 - dimx / 6, y1 + dimy / 6);
+            g.drawLine(this.x1 + dimx / 2, y1, this.x1 + dimx / 6, y1 - dimy / 6);
+            g.drawLine(this.x1 + dimx / 2, y1, this.x1 + dimx / 6, y1 + dimy / 6);
             g.setColor(this.colorLinea);
-            
+
         }
-        if(this.numFigura==1){
+        if (this.numFigura == 1) {
             g.setColor(this.colorLinea);
-            g.drawOval(this.x1-this.dimx/2, this.y1-dimy/2, dimx, dimy);
+            g.drawOval(this.x1 - this.dimx / 2, this.y1 - dimy / 2, dimx, dimy);
             g.setColor(this.colorLinea);
         }
-        if(this.numFigura==2){
-         g.setColor(this.colorLinea);
-            g.drawLine(this.x1-this.dimx,this.y1-this.dimy,this.x1+this.dimx,this.y1-this.dimy);
-            g.drawLine(this.x1-this.dimx,this.y1+this.dimy,this.x1+this.dimx,this.y1+this.dimy);
-            g.drawLine(this.x1-this.dimx,this.y1+this.dimy,this.x1-this.dimx,this.y1-this.dimy);
-            g.drawLine(this.x1+this.dimx,this.y1+this.dimy,this.x1+this.dimx,this.y1-this.dimy);
+        if (this.numFigura == 2) {
             g.setColor(this.colorLinea);
-            
+            g.drawLine(this.x1 - this.dimx, this.y1 - this.dimy, this.x1 + this.dimx, this.y1 - this.dimy);
+            g.drawLine(this.x1 - this.dimx, this.y1 + this.dimy, this.x1 + this.dimx, this.y1 + this.dimy);
+            g.drawLine(this.x1 - this.dimx, this.y1 + this.dimy, this.x1 - this.dimx, this.y1 - this.dimy);
+            g.drawLine(this.x1 + this.dimx, this.y1 + this.dimy, this.x1 + this.dimx, this.y1 - this.dimy);
+            g.setColor(this.colorLinea);
+
         }
-        if(this.numFigura==3){
+        if (this.numFigura == 3) {
             g.setColor(this.colorLinea);
-            g.drawLine(this.x1-this.dimx,this.y1-this.dimy,this.x1+this.dimx,this.y1-this.dimy);
-            g.drawLine(this.x1-this.dimx,this.y1+this.dimy,this.x1+this.dimx,this.y1+this.dimy);
-            g.drawLine(this.x1-this.dimx,this.y1+this.dimy,this.x1-this.dimx,this.y1-this.dimy);
-            g.drawLine(this.x1+this.dimx,this.y1+this.dimy,this.x1+this.dimx,this.y1-this.dimy);
-             g.setColor(this.colorLinea);
+            g.drawLine(this.x1 - this.dimx, this.y1 - this.dimy, this.x1 + this.dimx, this.y1 - this.dimy);
+            g.drawLine(this.x1 - this.dimx, this.y1 + this.dimy, this.x1 + this.dimx, this.y1 + this.dimy);
+            g.drawLine(this.x1 - this.dimx, this.y1 + this.dimy, this.x1 - this.dimx, this.y1 - this.dimy);
+            g.drawLine(this.x1 + this.dimx, this.y1 + this.dimy, this.x1 + this.dimx, this.y1 - this.dimy);
+            g.setColor(this.colorLinea);
         }
-       if(this.numFigura==4){
-           g.setColor(this.colorLinea);
-           
-           
-            g.drawLine(this.x1,this.y1-this.dimx,this.x1+this.dimx,this.y1+this.dimy);
-            g.drawLine(this.x1-this.dimx,this.y1+this.dimy,this.x1,this.y1-this.dimx);
-           g.drawLine(this.x1-this.dimx,this.y1+this.dimy,this.x1+this.dimx,this.y1+this.dimy);
+        if (this.numFigura == 4) {
             g.setColor(this.colorLinea);
-           
-           
+
+            g.drawLine(this.x1, this.y1 - this.dimx, this.x1 + this.dimx, this.y1 + this.dimy);
+            g.drawLine(this.x1 - this.dimx, this.y1 + this.dimy, this.x1, this.y1 - this.dimx);
+            g.drawLine(this.x1 - this.dimx, this.y1 + this.dimy, this.x1 + this.dimx, this.y1 + this.dimy);
+            g.setColor(this.colorLinea);
+
         }
     }
 
     @Override
     public void mouseClicked(MouseEvent e) {
+        this.x1 = e.getX();
+        this.y1 = e.getY();
 
+        super.repaint();
     }
 
     @Override
@@ -117,14 +121,7 @@ public class PanelPaint extends JPanel implements MouseListener{
     @Override
     public void mouseReleased(MouseEvent e) {
         //   JOptionPane.showMessageDialog(this, e.getPoint());
-        
-         
-        this.x1 = e.getX();
-        this.y1 = e.getY();
-        
-        super.repaint();
-         
-           
+
     }
 
     @Override
@@ -175,5 +172,4 @@ public class PanelPaint extends JPanel implements MouseListener{
         this.colorLinea = colorLinea;
     }
 
-    
 }
